@@ -33,6 +33,7 @@ public class RemoverFucionario extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Remover Funcionário");
 
         jLabel1.setText("CPF do Funcionário");
 

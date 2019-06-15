@@ -46,6 +46,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cadastrar Funcionário");
 
         jLabel1.setIcon(new javax.swing.ImageIcon("/home/vinicius/github/CorpPlay/CorpPlay/src/main/java/br/com/corpplay/imagens/adduser_añadir_3553.png")); // NOI18N
 

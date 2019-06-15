@@ -86,6 +86,7 @@ public class TelaFuncionario extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(258, 454, 107, 12);
 
+        jLabel1.setDisplayedMnemonic('F');
         jLabel1.setIcon(new javax.swing.ImageIcon("/home/vinicius/github/CorpPlay/CorpPlay/src/main/java/br/com/corpplay/imagens/Sem Título-fundo.png")); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, -10, 700, 480);
