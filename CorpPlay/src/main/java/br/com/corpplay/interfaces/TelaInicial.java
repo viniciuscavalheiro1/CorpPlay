@@ -58,7 +58,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel3.setText("CorpPlay ® | SysDev's ®");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, 149, 16));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/corpplay/imagens/perfil.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("/home/vinicius/github/CorpPlay/CorpPlay/src/main/java/br/com/corpplay/imagens/perfil.png")); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, -1, 280));
 
         jButton1.setText("Entrar");

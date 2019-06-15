@@ -28,19 +28,20 @@ public class CadastrarBebida extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        ml = new javax.swing.JTextField();
+        codigo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        preco = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        validade = new javax.swing.JTextField();
+        fabricante = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        quantidade = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        cadastrarBebida = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -49,118 +50,136 @@ public class CadastrarBebida extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(520, 290, 100, 16);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        ml.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                mlActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(500, 310, 160, 33);
+        getContentPane().add(ml);
+        ml.setBounds(500, 310, 160, 33);
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        codigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                codigoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(50, 310, 160, 33);
+        getContentPane().add(codigo);
+        codigo.setBounds(50, 310, 160, 33);
 
         jLabel3.setText("Código");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(100, 290, 43, 16);
+        jLabel3.setBounds(100, 290, 44, 16);
 
         jLabel5.setText("Preço R$");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(320, 290, 60, 16);
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        preco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                precoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(270, 310, 160, 33);
+        getContentPane().add(preco);
+        preco.setBounds(270, 310, 160, 33);
 
         jLabel4.setText("Validade lote");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(530, 370, 100, 16);
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        validade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                validadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(500, 390, 160, 33);
+        getContentPane().add(validade);
+        validade.setBounds(500, 390, 160, 33);
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        fabricante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                fabricanteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5);
-        jTextField5.setBounds(50, 390, 150, 33);
+        getContentPane().add(fabricante);
+        fabricante.setBounds(50, 390, 150, 33);
 
         jLabel6.setText("Fabricante");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(100, 370, 62, 16);
+        jLabel6.setBounds(100, 370, 65, 16);
 
         jLabel7.setText("Quantidade");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(320, 370, 90, 16);
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        quantidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                quantidadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField6);
-        jTextField6.setBounds(270, 390, 160, 33);
+        getContentPane().add(quantidade);
+        quantidade.setBounds(270, 390, 160, 33);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/corpplay/imagens/perfil.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/vinicius/github/CorpPlay/CorpPlay/src/main/java/br/com/corpplay/imagens/perfil.png")); // NOI18N
         jLabel1.setText("adasd");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(200, 0, 300, 280);
 
-        jButton1.setText("Cadastrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        cadastrarBebida.setText("Cadastrar");
+        cadastrarBebida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                cadastrarBebidaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(510, 460, 150, 26);
+        getContentPane().add(cadastrarBebida);
+        cadastrarBebida.setBounds(500, 456, 160, 30);
+
+        jButton2.setIcon(new javax.swing.ImageIcon("/home/vinicius/github/CorpPlay/CorpPlay/src/main/java/br/com/corpplay/imagens/backbutton_104978.png")); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(50, 450, 42, 42);
 
         setBounds(0, 0, 710, 530);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void mlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mlActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_mlActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_codigoActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void precoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_precoActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void validadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_validadeActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void fabricanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fabricanteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_fabricanteActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void quantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quantidadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_quantidadeActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void cadastrarBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBebidaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+        String bebida = codigo.getText() + "," + preco.getText() + "," + ml.getText() + "," + 
+                fabricante.getText() + "," + quantidade.getText() + "," + validade.getText();
+        
+    }//GEN-LAST:event_cadastrarBebidaActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,7 +217,10 @@ public class CadastrarBebida extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton cadastrarBebida;
+    private javax.swing.JTextField codigo;
+    private javax.swing.JTextField fabricante;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -206,11 +228,9 @@ public class CadastrarBebida extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField ml;
+    private javax.swing.JTextField preco;
+    private javax.swing.JTextField quantidade;
+    private javax.swing.JTextField validade;
     // End of variables declaration//GEN-END:variables
 }
