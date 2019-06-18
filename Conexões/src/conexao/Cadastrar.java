@@ -125,6 +125,11 @@ public class Cadastrar {
         }
         b.desconectar();
     }
+    
+    public void AtualizarBebida(String codigo){
+        
+    }
+    
     public void ExcluirBebida(String codigo){
         Banco b = new Banco();
         b.conectar();

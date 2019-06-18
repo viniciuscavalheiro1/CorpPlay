@@ -220,10 +220,6 @@ public class Cadastrar {
             
             resultSet = preparedStatement.executeQuery();
             
-            if(Login.equals(resultSet.getString("Login")) && Senha.equals(resultSet.getString("Senha"))){
-                JOptionPane.showMessageDialog(null,"Logado!");
-            }
-            
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null,"Erro, usúario não cadastrado");
         }finally{
@@ -252,9 +248,6 @@ public class Cadastrar {
             
             resultSet = preparedStatement.executeQuery();
             
-            if(Login.equals(resultSet.getString("Login")) && Senha.equals(resultSet.getString("Senha"))){
-                JOptionPane.showMessageDialog(null,"Logado!");
-            }
             
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null,"Erro, usúario não cadastrado");
@@ -281,19 +274,85 @@ public class Cadastrar {
             preparedStatement = b.criarPreparedStatement(sql);
             resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
-            String codigo = resultSet.getString("Codigo");
-            float preco = resultSet.getFloat("Preco");
-            int ml = resultSet.getInt("Ml");
-            String fabricante = resultSet.getString("Fabricante");
-            String validade = resultSet.getString("Validade");
-            int quantidade = resultSet.getInt("Quantidade");
-            estoque.add(new Bebidas(codigo,preco,ml,fabricante,quantidade,validade));
+                String codigo = resultSet.getString("Codigo");
+                float preco = resultSet.getFloat("Preco");
+                int ml = resultSet.getInt("Ml");
+                String fabricante = resultSet.getString("Fabricante");
+                String validade = resultSet.getString("Validade");
+                int quantidade = resultSet.getInt("Quantidade");
+                estoque.add(new Bebidas(codigo,preco,ml,fabricante,quantidade,validade));
         }
             return estoque;
             
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null,"Erro, Não tem bebidas cadastradas");
             return null;
+        }finally{
+            try{
+                resultSet.close();
+                preparedStatement.close();
+                b.desconectar();
+            }catch(SQLException ex){
+                ex.printStackTrace();
+            }
+        }
+    }
+    public Bebidas MostrarBebida(String codigo){
+        Banco b = new Banco();
+        b.conectar();
+        ResultSet resultSet = null;
+        PreparedStatement preparedStatement = null;
+        
+        String sql = "SELECT * FROM Bebidas";
+        
+        try{
+            preparedStatement = b.criarPreparedStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                if(resultSet.getString("Codigo").equals(codigo)){
+                    String codi = resultSet.getString("Codigo");
+                    float preco = resultSet.getFloat("Preco");
+                    int ml = resultSet.getInt("Ml");
+                    String fabricante = resultSet.getString("Fabricante");
+                    String validade = resultSet.getString("Validade");
+                    int quantidade = resultSet.getInt("Quantidade");
+                    return new Bebidas(codi,preco,ml,fabricante,quantidade,validade);
+                }
+            }
+            return null;
+            
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null,"Erro, Bebida não cadastrada");
+            return null;
+        }finally{
+            try{
+                resultSet.close();
+                preparedStatement.close();
+                b.desconectar();
+            }catch(SQLException ex){
+                ex.printStackTrace();
+            }
+        }
+    }
+    public void AtualizarBebida(float Preco, int Ml, String Fabricante, int Quantidade, String Validade){
+        Banco b = new Banco();
+        b.conectar();
+        ResultSet resultSet = null;
+        PreparedStatement preparedStatement = null;
+        
+        String sql = "UPDATE Bebidas SET Preco = ?, Ml = ?, Fabricante = ?, Quantidade = ?, Validade = ?";
+        
+        try{
+            preparedStatement = b.criarPreparedStatement(sql);
+            preparedStatement.setFloat(2,Preco);
+            preparedStatement.setInt(3,Ml);
+            preparedStatement.setString(4,Fabricante);
+            preparedStatement.setInt(5,Quantidade);
+            preparedStatement.setString(6,Validade);
+            resultSet = preparedStatement.executeQuery();
+            
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null,"Erro " + e);
         }finally{
             try{
                 resultSet.close();

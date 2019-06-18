@@ -42,6 +42,7 @@ public class TelaFuncionario extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
 
@@ -52,7 +53,7 @@ public class TelaFuncionario extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         jLabel3.setText("CorpPlay ® | SysDev's ®");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(258, 454, 107, 12);
+        jLabel3.setBounds(258, 454, 106, 13);
 
         jLabel1.setDisplayedMnemonic('F');
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Sem Título-fundo.png"))); // NOI18N
@@ -74,7 +75,7 @@ public class TelaFuncionario extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Bebida");
+        jMenu2.setText("Bebidas");
 
         jMenuItem3.setText("Cadastrar");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -97,6 +98,14 @@ public class TelaFuncionario extends javax.swing.JFrame {
 
         jMenuItem6.setText("Buscar");
         jMenu2.add(jMenuItem6);
+
+        jMenuItem8.setText("Listar");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem8);
 
         jMenuBar1.add(jMenu2);
 
@@ -140,6 +149,10 @@ public class TelaFuncionario extends javax.swing.JFrame {
         cadastroBebida.show();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
@@ -154,5 +167,6 @@ public class TelaFuncionario extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     // End of variables declaration//GEN-END:variables
 }
