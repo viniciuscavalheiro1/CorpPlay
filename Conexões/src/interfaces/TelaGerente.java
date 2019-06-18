@@ -40,11 +40,13 @@ public class TelaGerente extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -60,9 +62,10 @@ public class TelaGerente extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         jLabel3.setText("CorpPlay ® | SysDev's ®");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(258, 454, 107, 12);
+        jLabel3.setBounds(300, 450, 106, 10);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Sem Título-fundo.png"))); // NOI18N
+        jLabel1.setPreferredSize(new java.awt.Dimension(500, 500));
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, -10, 700, 480);
 
@@ -79,9 +82,17 @@ public class TelaGerente extends javax.swing.JFrame {
         jMenuItem2.setText("Buscar Venda");
         jMenu1.add(jMenuItem2);
 
+        jMenuItem14.setText("Gerar Relatorio");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem14);
+
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Bebida");
+        jMenu2.setText("Bebidas");
 
         jMenuItem3.setText("Cadastrar");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -100,10 +111,23 @@ public class TelaGerente extends javax.swing.JFrame {
         jMenu2.add(jMenuItem4);
 
         jMenuItem5.setText("Editar");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem5);
 
         jMenuItem6.setText("Buscar");
         jMenu2.add(jMenuItem6);
+
+        jMenuItem13.setText("Listar");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem13);
 
         jMenuBar1.add(jMenu2);
 
@@ -208,6 +232,19 @@ public class TelaGerente extends javax.swing.JFrame {
         cadastrarBebida.show();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        EditarBebida editarBebid= new EditarBebida();
+        editarBebida.show();
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
@@ -219,6 +256,8 @@ public class TelaGerente extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
