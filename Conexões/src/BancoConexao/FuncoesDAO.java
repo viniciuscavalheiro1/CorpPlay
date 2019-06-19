@@ -380,34 +380,29 @@ public class FuncoesDAO {
         }
     }
 
-    public static void atualizarBebida(Bebida bb) {
+    public static boolean atualizarBebida(Bebida bb) {
         Banco b = new Banco();
         b.conectar();
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
 
-        String sql = "UPDATE Bebidas SET Preco = ?, Ml = ?, Fabricante = ?, Quantidade = ?, Validade = ? WHERE Codigo = ?";
+        String sql = "UPDATE Bebidas SET Preco = ?, Ml = ?, Fabricante = ?, Quantidade = ?, Validade = ? WHERE Codigo = ?;";
 
         try {
             preparedStatement = b.criarPreparedStatement(sql);
-            preparedStatement.setFloat(2, bb.getPreco());
-            preparedStatement.setInt(3, bb.getMl());
-            preparedStatement.setString(4, bb.getFabricante());
-            preparedStatement.setInt(5, bb.getQuantidade());
-            preparedStatement.setString(6, bb.getValidade());
-            preparedStatement.setString(7, bb.getCodigo());
+            preparedStatement.setFloat(1, bb.getPreco());
+            preparedStatement.setInt(2, bb.getMl());
+            preparedStatement.setString(3, bb.getFabricante());
+            preparedStatement.setInt(4, bb.getQuantidade());
+            preparedStatement.setString(5, bb.getValidade());
+            preparedStatement.setString(6, bb.getCodigo());
             preparedStatement.executeUpdate();
-
+            JOptionPane.showMessageDialog(null, "Dados Atualizados ");
+            return true;
+            
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro " + e);
-        } finally {
-            try {
-                resultSet.close();
-                preparedStatement.close();
-                b.desconectar();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
+            return false;
         }
     }
 
@@ -439,5 +434,31 @@ public class FuncoesDAO {
             } catch (SQLException ex) {
             }
         }
+    }
+
+    public static Bebida buscarBebida(String codigo) throws SQLException {
+        Banco b = new Banco();
+        b.conectar();
+        ResultSet resultSet = null;
+        PreparedStatement preparedStatement = null;
+
+        String sql = "SELECT * FROM Bebidas WHERE Codigo = ?;";
+
+        preparedStatement = b.criarPreparedStatement(sql);
+        preparedStatement.setString(1, codigo);
+        resultSet = preparedStatement.executeQuery();
+
+        if (!resultSet.next()) {
+            resultSet.close();
+            preparedStatement.close();
+            b.desconectar();
+            return null;
+        } else {
+            Bebida bb =  new Bebida(resultSet.getString("Codigo"), resultSet.getFloat("Preco"), resultSet.getInt("Ml"), resultSet.getString("Fabricante"), resultSet.getInt("Quantidade"), resultSet.getString("Validade"));
+            preparedStatement.close();
+            b.desconectar();
+            return bb;
+        }
+
     }
 }
