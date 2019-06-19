@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public abstract class FuncoesDAO {
+public class FuncoesDAO {
 
     public static void cadastrarGerente(Gerente g) {
         Banco b = new Banco();

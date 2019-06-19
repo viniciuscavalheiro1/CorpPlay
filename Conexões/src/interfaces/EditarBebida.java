@@ -98,11 +98,7 @@ public class EditarBebida extends javax.swing.JFrame {
 
         jButton2.setText("Atualizar");
 
-        codigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codigoActionPerformed(evt);
-            }
-        });
+        codigo.setText("jTextField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,9 +109,9 @@ public class EditarBebida extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(35, 35, 35)
+                        .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(144, 144, 144)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,16 +200,12 @@ public class EditarBebida extends javax.swing.JFrame {
     }//GEN-LAST:event_qtActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       FuncoesDAO.atualizarBebida(new Bebida(codigo.getText(), Double.parseDouble(preco.getText()), Integer.parseInt(ml.getText()), fabricante.getText(), Integer.parseInt(qt.getText()), vl.getText()));
+       //FuncoesDAO.atualizarBebida(new Bebida(codigo., Double.parseDouble(preco.getText()), Integer.parseInt(ml.getText()), fabricante.getText(), Integer.parseInt(qt.getText()), vl.getText()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void precoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_precoActionPerformed
-
-    private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_codigoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
