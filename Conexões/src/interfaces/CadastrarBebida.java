@@ -5,8 +5,8 @@
  */
 package interfaces;
 
-import conexao.Cadastrar;
-
+import BancoConexao.FuncoesDAO;
+import entidades.Bebida;
 
 /**
  *
@@ -46,12 +46,12 @@ public class CadastrarBebida extends javax.swing.JFrame {
         cadastrarBebida = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
         jLabel2.setText("Quantidade ml");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(520, 290, 100, 16);
+        jLabel2.setBounds(520, 290, 100, 18);
 
         ml.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,7 +59,7 @@ public class CadastrarBebida extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ml);
-        ml.setBounds(500, 310, 160, 33);
+        ml.setBounds(500, 310, 160, 24);
 
         codigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,15 +67,15 @@ public class CadastrarBebida extends javax.swing.JFrame {
             }
         });
         getContentPane().add(codigo);
-        codigo.setBounds(50, 310, 160, 33);
+        codigo.setBounds(50, 310, 160, 24);
 
         jLabel3.setText("Código");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(100, 290, 44, 16);
+        jLabel3.setBounds(100, 290, 49, 18);
 
         jLabel5.setText("Preço R$");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(320, 290, 60, 16);
+        jLabel5.setBounds(320, 290, 60, 18);
 
         preco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,11 +83,11 @@ public class CadastrarBebida extends javax.swing.JFrame {
             }
         });
         getContentPane().add(preco);
-        preco.setBounds(270, 310, 160, 33);
+        preco.setBounds(270, 310, 160, 24);
 
         jLabel4.setText("Validade lote");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(530, 370, 100, 16);
+        jLabel4.setBounds(530, 370, 100, 18);
 
         validade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,7 +95,7 @@ public class CadastrarBebida extends javax.swing.JFrame {
             }
         });
         getContentPane().add(validade);
-        validade.setBounds(500, 390, 160, 33);
+        validade.setBounds(500, 390, 160, 24);
 
         fabricante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,15 +103,15 @@ public class CadastrarBebida extends javax.swing.JFrame {
             }
         });
         getContentPane().add(fabricante);
-        fabricante.setBounds(50, 390, 150, 33);
+        fabricante.setBounds(50, 390, 150, 24);
 
         jLabel6.setText("Fabricante");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(100, 370, 65, 16);
+        jLabel6.setBounds(100, 370, 73, 18);
 
         jLabel7.setText("Quantidade");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(320, 370, 90, 16);
+        jLabel7.setBounds(320, 370, 90, 18);
 
         quantidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,7 +119,7 @@ public class CadastrarBebida extends javax.swing.JFrame {
             }
         });
         getContentPane().add(quantidade);
-        quantidade.setBounds(270, 390, 160, 33);
+        quantidade.setBounds(270, 390, 160, 24);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/perfil.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -141,7 +141,7 @@ public class CadastrarBebida extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(50, 450, 42, 42);
+        jButton2.setBounds(50, 450, 60, 50);
 
         setBounds(0, 0, 710, 530);
     }// </editor-fold>//GEN-END:initComponents
@@ -171,13 +171,9 @@ public class CadastrarBebida extends javax.swing.JFrame {
     }//GEN-LAST:event_quantidadeActionPerformed
 
     private void cadastrarBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBebidaActionPerformed
-        // TODO add your handling code here:
-        Cadastrar cad = new Cadastrar();
-        
-       
-        cad.CadastrarBebida(codigo.getText(), Float.parseFloat(preco.getText()), Integer.parseInt(ml.getText()), fabricante.getText(), Integer.parseInt(quantidade.getText()), validade.getText());
-        
-       
+
+        FuncoesDAO.cadastrarBebida(new Bebida(codigo.getText(), Float.parseFloat(preco.getText()), Integer.parseInt(ml.getText()), fabricante.getText(), Integer.parseInt(quantidade.getText()), validade.getText()));
+
     }//GEN-LAST:event_cadastrarBebidaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

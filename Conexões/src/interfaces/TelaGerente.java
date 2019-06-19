@@ -55,19 +55,21 @@ public class TelaGerente extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("CorpPlay");
+        setPreferredSize(new java.awt.Dimension(500, 500));
+        setSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         jLabel3.setText("CorpPlay ® | SysDev's ®");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(300, 450, 106, 10);
+        jLabel3.setBounds(280, 450, 106, 10);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Sem Título-fundo.png"))); // NOI18N
         jLabel1.setPreferredSize(new java.awt.Dimension(500, 500));
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, -10, 700, 480);
+        jLabel1.setBounds(-20, 0, 700, 480);
 
         jMenu1.setText("Vendas");
 
@@ -181,7 +183,7 @@ public class TelaGerente extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        setBounds(0, 0, 710, 530);
+        setBounds(0, 0, 660, 530);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -241,8 +243,7 @@ public class TelaGerente extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        EditarBebida editarBebid= new EditarBebida();
-        editarBebida.show();
+        new EditarBebida().setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

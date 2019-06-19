@@ -5,7 +5,7 @@
  */
 package interfaces;
 
-import conexao.Cadastrar;
+import BancoConexao.FuncoesDAO;
 
 /**
  *
@@ -35,7 +35,7 @@ public class RemoverFucionario extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Remover Funcionário");
 
         jLabel1.setText("CPF do Funcionário");
@@ -100,8 +100,7 @@ public class RemoverFucionario extends javax.swing.JFrame {
 
     private void removerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerActionPerformed
         // TODO add your handling code here:
-        Cadastrar cad = new Cadastrar();
-        cad.ExcluirFuncionario(cpf.getText());
+        FuncoesDAO.excluirFuncionario(cpf.getText());
         this.dispose();
     }//GEN-LAST:event_removerActionPerformed
 
