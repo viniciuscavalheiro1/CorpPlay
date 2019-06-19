@@ -5,7 +5,7 @@
  */
 package interfaces;
 
-import conexao.Cadastrar;
+import BancoConexao.FuncoesDAO;
 
 /**
  *
@@ -119,15 +119,14 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Cadastrar cad = new Cadastrar();
         if(op.getSelectedItem().equals("Funcionário")){
-            if(cad.LoginFuncionario(login.getText(), senha.getText())){
+            if(FuncoesDAO.loginFuncionario(login.getText(), senha.getText())){
                 TelaFuncionario telaFuncionario = new TelaFuncionario();
                 telaFuncionario.show();
                 this.dispose();
             }
         }else if(op.getSelectedItem().equals("Gerente")){
-            if(cad.LoginGerente(login.getText(), senha.getText())){
+            if(FuncoesDAO.loginGerente(login.getText(), senha.getText())){
                 TelaGerente telaGerente = new TelaGerente();
                 telaGerente.show();
                 this.dispose();
@@ -136,41 +135,6 @@ public class Principal extends javax.swing.JFrame {
             
        
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

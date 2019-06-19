@@ -5,7 +5,8 @@
  */
 package interfaces;
 
-import conexao.Cadastrar;
+import BancoConexao.FuncoesDAO;
+import entidades.Gerente;
 
 /**
  *
@@ -47,7 +48,7 @@ public class CadastroGerente extends javax.swing.JFrame {
         cadastrar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastrar Gerente");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/adduser_añadir_3553.png"))); // NOI18N
@@ -178,9 +179,8 @@ public class CadastroGerente extends javax.swing.JFrame {
 
     private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
         // pegar aqui todas os valores e colocar em uma string
-        Cadastrar cad = new Cadastrar();
-        cad.CadastrarGerente(nomeF.getText(), cpfF.getText(), telefoneF.getText(), 
-                enderecoF.getText(), Float.parseFloat(salarioF.getText()), loginF.getText(), senhaF.getText());
+        FuncoesDAO.cadastrarGerente(new Gerente(nomeF.getText(), cpfF.getText(), telefoneF.getText(), 
+                enderecoF.getText(), Float.parseFloat(salarioF.getText()), loginF.getText(), senhaF.getText()));
         this.dispose();
     }//GEN-LAST:event_cadastrarActionPerformed
 
